@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/catalog.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter_application_1/widgets/item_widgets.dart';
 
-// We learn about trees and build context
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -9,21 +10,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     int a = 30;
     String s = "Codepur";
+    final dummylist = List.generate(17, (index) => CatalogModel.items[0]);
 
     return Scaffold(
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
       body: Center(
-        child: Container(
-          child: Text(
-            "Welcome to $a days of flutter by $s ",
-            style: TextStyle(
-              fontSize: 16,
-            ),
-          ),
+          child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummylist.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: CatalogModel.items[0],
+            );
+          },
         ),
-      ),
+      )),
       drawer: MyDrawer(),
     );
   }
