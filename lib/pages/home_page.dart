@@ -9,7 +9,6 @@ import 'package:flutter_application_1/widgets/item_widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -64,6 +63,7 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               item.name,
                               style: TextStyle(color: Colors.white),
+                              textAlign: TextAlign.center,
                             ),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 0, 94, 255),
@@ -73,6 +73,7 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               item.price.toString(),
                               style: TextStyle(color: Colors.white),
+                              textAlign: TextAlign.center,
                             ),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 0, 0, 0),
@@ -82,17 +83,9 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                     itemCount: CatalogModel.items.length,
-                  )
-                  //  ListView.builder(
-                  //   itemCount: CatalogModel.items.length,
-                  //   itemBuilder: (context, index) {
-                  //     return ItemWidget(
-                  //       item: CatalogModel.items[index],
-                  //     );
-                  //   },
-                  // ),
-                  ),
+                  )),
             )
+
           //Progress indicator
           : Center(
               child: CircularProgressIndicator(),
