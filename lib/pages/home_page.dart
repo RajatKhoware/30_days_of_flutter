@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
 
 //Getting data from json file
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    //await Future.delayed(Duration(seconds: 1));
     var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
     var decodeData = jsonDecode(catalogJson);
     var productsData = decodeData["products"];
@@ -39,19 +41,59 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
+      //Progress indicator
       body: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
           ? Center(
               child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: ListView.builder(
-                    itemCount: CatalogModel.items.length,
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 14,
+                    ),
                     itemBuilder: (context, index) {
-                      return ItemWidget(
-                        item: CatalogModel.items[index],
+                      final item = CatalogModel.items[index];
+                      return Card(
+                        clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: GridTile(
+                          child: Image.network(item.image),
+                          header: Container(
+                            child: Text(
+                              item.name,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 94, 255),
+                            ),
+                          ),
+                          footer: Container(
+                            child: Text(
+                              item.price.toString(),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ),
                       );
                     },
-                  )),
+                    itemCount: CatalogModel.items.length,
+                  )
+                  //  ListView.builder(
+                  //   itemCount: CatalogModel.items.length,
+                  //   itemBuilder: (context, index) {
+                  //     return ItemWidget(
+                  //       item: CatalogModel.items[index],
+                  //     );
+                  //   },
+                  // ),
+                  ),
             )
+          //Progress indicator
           : Center(
               child: CircularProgressIndicator(),
             ),
