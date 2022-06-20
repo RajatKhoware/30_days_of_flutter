@@ -1,18 +1,11 @@
+import 'package:flutter/foundation.dart';
+
 class CatalogModel {
-  static final items = [
-  Item(
-    id: "Codepur001",
-    name: "iPhone 13  Pro",
-    desc: "Apple iPhone 13th generation",
-    price: 999,
-    color: "#33505a",
-    image: "https://5.imimg.com/data5/SELLER/Default/2021/11/QV/QS/QL/141494617/brand-new-apple-iphone-13-pro-max-128gb-256gb-512gb-1tb-500x500.jpg",
-  )
-];
+  static List<Item> items = [];
 }
 
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -26,5 +19,26 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
-}
 
+  factory Item.fromMap(
+    Map<String, dynamic> map,
+  ) {
+    return Item(
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      price: map["price"],
+      color: map["color"],
+      image: map["image"],
+    );
+  }
+
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
+}

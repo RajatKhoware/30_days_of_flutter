@@ -9,6 +9,7 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color.fromARGB(255, 219, 228, 231),
       child: ListTile(
         leading: Image.network(item.image),
         title: Text(item.name),
