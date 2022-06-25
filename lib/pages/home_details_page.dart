@@ -21,7 +21,7 @@ class MyDetails extends StatelessWidget {
         title: Text(
           "Trending products",
           style: TextStyle(
-            color: Color.fromARGB(255, 255, 204, 204),
+          
             fontWeight: FontWeight.bold,
           ),
         ),

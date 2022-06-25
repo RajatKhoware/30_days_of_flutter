@@ -37,8 +37,9 @@ class MyTheme {
         appBarTheme: AppBarTheme(
           color: Colors.white,
           iconTheme: IconThemeData(color: Colors.white),
-          toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
-          titleTextStyle: Theme.of(context).textTheme.headline6,
+          toolbarTextStyle: Theme.of(context).textTheme.bodyText2?.copyWith(color: Colors.white),
+          titleTextStyle: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.white),
+        
         ),
       );
 
