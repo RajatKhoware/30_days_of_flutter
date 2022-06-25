@@ -17,13 +17,12 @@ class MyDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: MyTheme.creamColor,
+      backgroundColor: MyTheme.creamColor,
       appBar: AppBar(
         title: Text(
           "Trending products",
           style: TextStyle(
             color: Colors.black,
-            
           ),
         ),
         elevation: 0,
