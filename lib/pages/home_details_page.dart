@@ -17,20 +17,21 @@ class MyDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
       appBar: AppBar(
         title: Text(
           "Trending products",
           style: TextStyle(
-            color: Colors.black,
+            color: Color.fromARGB(255, 255, 204, 204),
+            fontWeight: FontWeight.bold,
           ),
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
         titleSpacing: 0,
       ),
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -45,7 +46,7 @@ class MyDetails extends StatelessWidget {
                     child: "Buy".text.make())
                 .wh(110, 50)
           ],
-        ).p24(),
+        ).p12(),
       ),
       // backgroundColor: MyTheme.creamColor,
       body: SafeArea(
@@ -61,26 +62,27 @@ class MyDetails extends StatelessWidget {
                           .size(350, 60)
                           .rounded
                           .p12
-                          .color(Color.fromARGB(255, 235, 238, 238))
+                          .color(context.cardColor)
                           .make()
                           .h40(context)
                           .centered())
-                  .py20(),
+                  .py12(),
               Expanded(
                   child: VxArc(
-                      height: 5.0,
+                      height: 0.0,
                       arcType: VxArcType.CONVEX,
                       edge: VxEdge.TOP,
                       child: Container(
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        color: (context.cardColor),
                         width: context.screenWidth,
                         child: Column(
                           children: [
                             catalog.name.text.xl3.bold
-                                .color(MyTheme.darkBluishColor)
+                                .color(context.accentColor)
                                 .make(),
                             catalog.desc.text.lg
                                 .textStyle(context.captionStyle)
+                                .color(context.accentColor)
                                 .make(),
                             10.heightBox,
                             "Syllable flirt thee this into lie or a. the more of sure i i door there, nearly though never but him. Has disaster angels and croaking till, before tapping still farther door."
@@ -89,7 +91,7 @@ class MyDetails extends StatelessWidget {
                                   context.captionStyle,
                                 )
                                 .make()
-                                .px8(),
+                                .px24(),
                           ],
                         ).py12(),
                       )))

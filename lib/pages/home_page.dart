@@ -42,21 +42,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor:context.canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: (() => Navigator.pushNamed(context, MyRoutes.cartRoute)),
         child: Icon(CupertinoIcons.cart),
-        backgroundColor: Color.fromARGB(255, 255, 51, 0),
+        backgroundColor:context.theme.buttonColor,
       ),
-      backgroundColor: MyTheme.creamColor,
       body: SafeArea(
         child: Container(
           padding: Vx.m12,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CatalogHeader(),
+              CatalogHeader().p8(),
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList().px12().expand()
+                CatalogList().p12().expand()
               else
                 CircularProgressIndicator().centered().expand(),
             ],
