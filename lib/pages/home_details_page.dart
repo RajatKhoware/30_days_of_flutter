@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../models/catalog.dart';
 import '../widgets/home_widgets/catalog_header.dart';
@@ -14,12 +17,18 @@ class MyDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: MyTheme.creamColor,
       appBar: AppBar(
         title: Text(
-          "Catalog App",
+          "Trending products",
           style: TextStyle(
-              color: MyTheme.darkBluishColor, fontWeight: FontWeight.bold),
+            color: Colors.black,
+            
+          ),
         ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        titleSpacing: 0,
       ),
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -47,16 +56,17 @@ class MyDetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Hero(
-                  tag: Key(catalog.id.toString()),
-                  child: Image.network(catalog.image)
-                      .box
-                      .size(350, 60)
-                      .rounded
-                      .p12
-                      .color(Color.fromARGB(255, 235, 238, 238))
-                      .make()
-                      .h40(context)
-                      .centered()).py20(),
+                      tag: Key(catalog.id.toString()),
+                      child: Image.network(catalog.image)
+                          .box
+                          .size(350, 60)
+                          .rounded
+                          .p12
+                          .color(Color.fromARGB(255, 235, 238, 238))
+                          .make()
+                          .h40(context)
+                          .centered())
+                  .py20(),
               Expanded(
                   child: VxArc(
                       height: 5.0,
@@ -74,6 +84,13 @@ class MyDetails extends StatelessWidget {
                                 .textStyle(context.captionStyle)
                                 .make(),
                             10.heightBox,
+                            "Syllable flirt thee this into lie or a. the more of sure i i door there, nearly though never but him. Has disaster angels and croaking till, before tapping still farther door."
+                                .text
+                                .textStyle(
+                                  context.captionStyle,
+                                )
+                                .make()
+                                .px8(),
                           ],
                         ).py12(),
                       )))
