@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
-        primarySwatch: Colors.red,
+         primarySwatch: Colors.pink,
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: Colors.white,
         canvasColor: creamColor,
@@ -15,6 +14,7 @@ class MyTheme {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: darkBluishColor,
           primary: Color.fromARGB(255, 41, 0, 155),
+          primaryContainer: Colors.black,
         ),
         appBarTheme: AppBarTheme(
           color: Colors.white,
@@ -37,9 +37,14 @@ class MyTheme {
         appBarTheme: AppBarTheme(
           color: Colors.white,
           iconTheme: IconThemeData(color: Colors.white),
-          toolbarTextStyle: Theme.of(context).textTheme.bodyText2?.copyWith(color: Colors.white),
-          titleTextStyle: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.white),
-        
+          toolbarTextStyle: Theme.of(context)
+              .textTheme
+              .bodyText2
+              ?.copyWith(color: Colors.white),
+          titleTextStyle: Theme.of(context)
+              .textTheme
+              .headline6
+              ?.copyWith(color: Colors.white),
         ),
       );
 
