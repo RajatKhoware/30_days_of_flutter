@@ -3,14 +3,6 @@ import 'package:flutter_application_1/models/cart_model.dart';
 
 class CatalogModel {
 
-// Creating a single ton
- static final catModel =CatalogModel._internal();
-
-  CatalogModel._internal();
-
-  factory CatalogModel() => catModel;
-//-----------------------------
-
   static List<Item> items = [];
 
   // Get Item by ID
