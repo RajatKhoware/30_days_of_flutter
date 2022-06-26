@@ -1,14 +1,26 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter_application_1/models/cart_model.dart';
 
 class CatalogModel {
+
+// Creating a single ton
+ static final catModel =CatalogModel._internal();
+
+  CatalogModel._internal();
+
+  factory CatalogModel() => catModel;
+//-----------------------------
+
   static List<Item> items = [];
 
   // Get Item by ID
   Item getById(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
-      
+
 // Get Item by position
    Item getByPosition(int pos) => items[pos];
+
+  void add(CartModel catalog) {}
 }
 
 class Item {
