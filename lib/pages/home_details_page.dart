@@ -1,12 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/theme.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/widgets/home_widgets/add_To_Cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../models/catalog.dart';
-import '../widgets/home_widgets/catalog_header.dart';
-import '../widgets/home_widgets/catalog_list.dart';
 
 class MyDetails extends StatelessWidget {
   const MyDetails({Key? key, required this.catalog})
@@ -37,14 +34,7 @@ class MyDetails extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.xl4.red800.bold.make(),
-            ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                      StadiumBorder(),
-                    )),
-                    child: "Buy".text.make())
-                .wh(110, 50)
+           AddToCart(catalog: catalog),
           ],
         ).p12(),
       ),
