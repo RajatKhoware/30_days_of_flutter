@@ -13,9 +13,10 @@ class MyTheme {
         canvasColor: creamColor,
         buttonColor: darkBluishColor,
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          secondary: darkBluishColor,
           primary: Color.fromARGB(255, 41, 0, 155),
           primaryContainer: Colors.black,
+          secondary: darkBluishColor,
+          secondaryContainer: darkBluishColor,
         ),
         appBarTheme: AppBarTheme(
           color: Colors.white,
@@ -32,9 +33,11 @@ class MyTheme {
         canvasColor: drakcreamColor,
         buttonColor: lightBluishColor,
         colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: Colors.white,
             primary: Color.fromARGB(255, 3, 161, 85),
-            brightness: Brightness.dark),
+            brightness: Brightness.dark,
+            secondary: Colors.white,
+            secondaryContainer: Colors.green,
+            ),
         appBarTheme: AppBarTheme(
           color: Colors.white,
           iconTheme: IconThemeData(color: Colors.white),

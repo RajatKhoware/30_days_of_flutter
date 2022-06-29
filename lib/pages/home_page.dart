@@ -54,11 +54,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: context.canvasColor,
       floatingActionButton: VxBuilder(
-        mutations: {AddMutation, RemoveMutation},
+        mutations: const {AddMutation, RemoveMutation},
         builder: (context, _, BuildContext) => FloatingActionButton(
           onPressed: (() => Navigator.pushNamed(context, MyRoutes.cartRoute)),
-          child: Icon(CupertinoIcons.cart),
           backgroundColor: context.theme.buttonColor,
+          child: Icon(CupertinoIcons.cart),
         ).badge(
             color: context.accentColor,
             size: 20,

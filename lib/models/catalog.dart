@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_application_1/models/cart_model.dart';
 
 class CatalogModel {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/cart_model.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../core/my_store.dart';
 
 class CartPage extends StatelessWidget {
@@ -51,11 +50,11 @@ class _CartTotal extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: "Buying not supported yet..."
+                content: "       Buying not supported yet..."
                     .text
                     .color(context.accentColor)
                     .make(),
-                duration: Duration(milliseconds: 100),
+                duration: Duration(milliseconds: 1200),
               ));
             },
             style: ButtonStyle(
